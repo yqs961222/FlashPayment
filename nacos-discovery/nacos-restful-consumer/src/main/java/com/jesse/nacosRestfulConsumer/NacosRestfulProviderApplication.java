@@ -1,8 +1,11 @@
-package com.jesse.nacosRestfulProvider;
+package com.jesse.nacosRestfulConsumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author Jesse Yuan
+ */
 @SpringBootApplication
 public class NacosRestfulProviderApplication {
 
