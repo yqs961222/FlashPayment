@@ -22,5 +22,13 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!--  provider服务提供方需要服务发现
+              服务发现的客户端：
+                1. 将自己的地址注册到服务发现中心；
+                2. 从服务发现中心获取服务列表 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
     </dependencies>
 </project>
