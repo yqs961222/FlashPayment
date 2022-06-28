@@ -1,0 +1,19 @@
+server:
+  port: 56020
+
+
+
+
+provider:
+  address: 127.0.0.1:56010
+spring:
+  application:
+    name: nacos-restful-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.130.6.115:8848
+#        namespace: xxxxxxxxxxxxxxx   # 指定命名空间的id
+      config:
+        server-addr: 10.130.6.115:8848  # 配置中心地址
+        file-extension: yaml    # 指定配置文件的扩展名，配置文件名称根据application.name的名称加扩展名拼装，为nacos-restful-consumer.yaml

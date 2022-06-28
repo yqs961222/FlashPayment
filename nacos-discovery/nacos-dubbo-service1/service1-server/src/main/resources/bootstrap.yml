@@ -1,0 +1,30 @@
+server:
+  port: 56030    # 启动端口 命令行注入
+
+spring:
+  application:
+    name: dubbo-service1
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.130.6.115:8848
+  main:
+    allow-bean-definition-overriding: true   # Spring Boot 2.1 需要设定， 如果出现重名bean会报错，加上这个配置就不会报错
+
+
+dubbo:
+  scan:
+    # dubbo 服务扫描基准包 所有需要暴露出去的dubbo接口服务都需要放在这个包下
+    base-packages: com.jesse.service1Server.service
+  protocol:
+  # dubbo 协议，name为协议名称， port为协议端口， 可以指定多协议， 如：dubbo.protocol.port=1099
+    name: dubbo
+    # 协议端口
+    port: 20881
+  registry:
+    # Dubbo服务注册中心配置，说明dubbo服务注册到nacos
+    address: nacos://10.130.6.115:8848
+  application:
+    qos-enable: false  # dubbo 运维服务是否开启
+  consumer:
+    check: false    # 启动时是否检查依赖的服务

@@ -8,8 +8,14 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>nacos-restful-consumer</artifactId>
-    <name>nacos-restful-consumer</name>
+    <artifactId>nacos-dubbo-service1</artifactId>
+    <name>nacos-dubbo-service1</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>service1-api</module>
+        <module>service1-server</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -23,24 +29,6 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.jesse</groupId>
-            <artifactId>service2-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.jesse</groupId>
-            <artifactId>service1-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-dubbo</artifactId>
         </dependency>
     </dependencies>
 
