@@ -1,6 +1,5 @@
-package com.jesse.nacosRestfulConsumer.controller;
+package com.jesse.service2Server.controller;
 
-import com.jesse.service2Api.service.Service2Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
@@ -17,8 +16,8 @@ import java.net.URI;
  * @Date: 2022-06-23 15:30
  */
 @RestController
-@Slf4j(topic = "jes.RestConsumerController")
-public class RestConsumerController {
+@Slf4j
+public class Service2ServerController {
 
     /**
      * 需要知道服务提供方ip地址
@@ -59,18 +58,5 @@ public class RestConsumerController {
     }
 
 
-    /**
-     * dubbo的Reference注解将接口注入进来，生成了这个接口的客户端代理对象，使用这个代理对象来实现远程调用服务
-     */
-    @org.apache.dubbo.config.annotation.Reference
-    Service2Api service2Api;
-
-    @GetMapping("/service2")
-    public String service2() {
-        // 远程调用dubboService2
-        log.debug("dubbo invoke start...");
-        String s = service2Api.dubboService2();
-        return "consumer dubbo invoke: " + s;
-    }
 
 }

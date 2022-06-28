@@ -4,14 +4,23 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.jesse</groupId>
-        <artifactId>nacos-discovery</artifactId>
+        <artifactId>nacos-dubbo-service2</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>nacos-restful-consumer</artifactId>
-    <name>nacos-restful-consumer</name>
+    <artifactId>service2-server</artifactId>
+    <name>service2-server</name>
 
     <dependencies>
+        <dependency>
+            <groupId>com.jesse</groupId>
+            <artifactId>service2-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-dubbo</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -23,15 +32,6 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.jesse</groupId>
-            <artifactId>service2-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-dubbo</artifactId>
         </dependency>
     </dependencies>
 
